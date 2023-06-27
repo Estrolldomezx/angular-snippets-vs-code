@@ -15,21 +15,47 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
 	"Angular Bootstrap Component": {
-		"prefix": "controller_${1:name}",
+		"prefix": "component${name}",
 		"body": [
 			"import { Component } from '@angular/core';",
 			"",
 			"@Component({",
-			"  selector: 'app-${1:name}',",
-			"  templateUrl: './${1:name}.html',",
-			"  styleUrls: ['./${1:name}.css']",
+			"  selector: 'app-${name}',",
+			"  templateUrl: './${name}.html',",
+			"  styleUrls: ['./${name}.css']",
 			"})",
-			"export class ${1:name}Component {",
+			"export class ${name}Component {",
 			"  // Component logic goes here",
 			"}"
 		],
-		"description": "Create a new Angular component with Bootstrap markup"
+		"description": "Create a new Angular component with Bootstrap markup",
+	},
+	"Angular Bootstrap Service": {
+		"prefix": "service${name}",
+		"body": [
+			"import { Injectable } from '@angular/core';",
+			"//import { ApiHttpService } from '';",
+			"",
+			"@Injectable({",
+			"  providedIn: 'root'",
+			"})",
+			"export class ${1:Service} {",
+			"  // Service logic goes here",
+			"constructor(private http: ApiHttpService) {}",
+			"\n",
+			"getConsentList() {",
+			"return this.http",
+			".get('consent/getConsentList')",
+			".then((result) => {",
+			"if (result) {",
+			"return result ? result.data : null;",
+			"}",
+			"})",
+			".catch((err) => {});",
+			"}",
+			"}",
+		],
+		"description": "Create a new Angular service with Bootstrap"
 	}
 }
