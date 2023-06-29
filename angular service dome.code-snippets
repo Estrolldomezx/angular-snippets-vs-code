@@ -318,4 +318,24 @@
 		],
 		"description": "Create a new mat select with Bootstrap markup",
 	},
+	"Angular Bootstrap Component": {
+		"prefix": "textArea${name}",
+		"body": [
+			"<label class=\"col-xl-3 col-md-3 col-form-label text-right\">",
+			"${name} :",
+			"</label>",
+			"<div class=\"col-xl-9 col-md-9\">",
+			"<div class=\"col-xl-12 col-md-12\">",
+			"<textarea",
+			"autocomplete=\"off\"",
+			"formControlName=\"${name}\"",
+			"type=\"text\"",
+			"[ngClass]=\"'form-control'\"",
+			"id=\"${name}\"",
+			"></textarea>",
+			"</div>",
+			"</div>"
+		],
+		"description": "Create a new text area with Bootstrap markup",
+	},
 }
